@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Links</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ccc; /* Grey background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .company-logo {
+            width: 150px;
+            height: 150px;
+            border: 8px solid gold;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+        
+        .company-logo img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .company-name {
+            font-size: 28px;
+            color: #333;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .company-name .highlight {
+            color: gold;
+        }
+        
+        .contacts {
+            text-align: left;
+            max-width: 300px;
+            width: 100%;
+            margin-top: 20px;
+            padding-left: 20px;
+            touch-action: manipulation; /* Disable pinch zoom */
+        }
+        
+        .contacts p {
+            margin: 10px 0;
+        }
+        
+        .contacts a {
+            display: block;
+            text-decoration: none;
+            color: #0073e6;
+            transition: color 0.3s;
+        }
+        
+        .contacts a:hover {
+            color: #005bb5;
+        }
+        
+        /* Sliding background images */
+        .background-images {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .background-images img {
+            width: 60%; /* Adjusted size */
+            max-width: 300px;
+            height: auto;
+            margin-right: 10px;
+            border: 5px solid gold; /* Add golden border */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: transform 0.3s ease-out;
+        }
+        
+        .background-images img:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+    </style>
+    <script>
+        // Auto-scroll feature on image click
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.background-images img');
+            let currentIndex = 0;
+
+            images.forEach((image, index) => {
+                image.addEventListener('click', function () {
+                    currentIndex = (index + 1) % images.length;
+                    images[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="company-logo">
+            <img src="images/Company logo 3.png" alt="Al Sahafi Logo">
+        </div>
+        <div class="company-name">Al-Sahafi <span class="highlight">Est</span></div>
+        <div class="contacts">
+            <p><a href="https://www.tiktok.com/@alsahafi_" target="_blank">TikTok Profile</a></p>
+            <p><a href="https://maps.app.goo.gl/U1kG9JoDHUv8zy3E6?g_st=iw" target="_blank">Google Maps Address</a></p>
+            <p><a href="tel:0551644338">Call Us</a></p>
+            <p><a href="https://wa.me/00966551644338" target="_blank">WhatsApp Us</a></p>
+        </div>
+        <div class="background-images">
+            <img src="images/background-image1.jpg" alt="Background Image">
+            <img src="images/background-image2.jpg" alt="Background Image">
+            <img src="images/background-image3.jpg" alt="Background Image">
+            <img src="images/background-image4.jpg" alt="Background Image">
+        </div>
+    </div>
+</body>
+</html>
+
+
